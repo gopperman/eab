@@ -1,0 +1,41 @@
+@mixin button-colors() {
+  background: $brand-primary;
+  color: $white;
+  transition: all, .2s;
+}
+
+.button {
+  @include button-colors();
+  border-bottom: 2px solid darken($brand-primary, 20%);
+  border-radius: 4px;
+  padding: 4px 16px;
+
+  &:hover,
+  &:active {
+
+  }
+}
+
+.nav {
+  > li {
+    transition: all, .2s;
+  }
+
+  > .button__nav {
+    @include button-colors();
+    border-bottom: 4px solid darken($brand-primary, 20%);
+    border-radius: 0 0 0 8px;
+    border-top: 6px solid $brand-primary;
+    height: $nav-height + 5;
+
+    &:hover,
+    &:active {
+      background: $brand-primary;
+    }
+
+    > a {
+      color: inherit;
+      padding: 10px 40px;
+    }
+  }
+}
